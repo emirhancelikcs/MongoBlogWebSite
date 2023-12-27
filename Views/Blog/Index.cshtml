@@ -1,0 +1,44 @@
+﻿@model List<BlogModel>
+
+@{
+	ViewData["Title"] = "Blogs";
+}
+
+@if (Model.Count <= 0 || Model == null)
+{
+	<h1>There is no Blog! <a href="/Blog/CreateBlog">Create Blog</a></h1>
+}
+else
+{
+	<h1>BLOGS</h1>
+
+	<div class="row">
+		@foreach (var blog in Model)
+		{
+			if (blog.Header.Length >= 22)
+				blog.Header = blog.Header.Substring(0, 22) + "...";
+
+			if (blog.Title.Length >= 24)
+				blog.Title = blog.Title.Substring(0, 24) + "...";
+
+			if (blog.Description.Length >= 68)
+				blog.Description = blog.Description.Substring(0, 68) + "...";
+
+			if (blog.User.Username.Length >= 13)
+				blog.User.Username = blog.User.Username.Substring(0, 13) + "...";
+
+			<div class="col-3 my-3">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">@blog.Header</h5>
+						<h6 class="card-subtitle mb-2 text-body-secondary">@blog.Title</h6>
+						<p class="card-text">@blog.Description</p>
+						<p class="card-text text-secondary">Created at @blog.CreatedTime</p>
+						<p class="card-text text-secondary">By <span class="fw-bold">@blog.User.Username</span></p>
+						<a href="/Blog/Details/@blog.Id" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Details</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+}

@@ -1,0 +1,66 @@
+﻿@using MongoBlogApi.Models;
+@model UserModel;
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/css/all.css" />
+	<link rel="stylesheet" href="~/css/login-register.css" />
+	<link rel="icon" type="image/x-icon" href="~/favicon.ico">
+	<title>Register</title>
+</head>
+<body>
+	<div class="wrapper">
+		<form method="post">
+			<h1>REGISTER</h1>
+
+			<div class="input-box">
+				<input type="text" placeholder="Name" asp-for="Name" required>
+				<i class="fa-solid fa-user"></i>
+			</div>
+
+			<div class="input-box">
+				<input type="text" placeholder="Lastname" asp-for="LastName" required>
+				<i class="fa-solid fa-user"></i>
+			</div>
+
+			<div class="input-box">
+				<input type="text" placeholder="Username" asp-for="Username" required>
+				<i class="fa-solid fa-user"></i>
+			</div>
+
+			<div class="input-box">
+				<input type="email" placeholder="Email" asp-for="Email" required>
+				<i class="fa-solid fa-user"></i>
+			</div>
+
+			<div class="input-box">
+				<input type="password" placeholder="Password" asp-for="Password" required>
+				<i class="fa-solid fa-lock"></i>
+			</div>
+
+			<div class="remember-forgot">
+				<label><input type="checkbox"> Remember me</label>
+				<a href="#">Forgot Password?</a>
+			</div>
+
+			<button type="submit" class="btn">Register</button>
+
+			<div class="register-link">
+				<p>
+					Already have an account?
+					<a href="/Login/Index">Login</a>
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+

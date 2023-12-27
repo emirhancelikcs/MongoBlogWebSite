@@ -1,0 +1,30 @@
+﻿@model BlogModel
+
+@{
+  ViewData["Title"] = @Model.Header;
+}
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<a href="/Blog" class="text-primary-emphasis">
+  <i class="fa-solid fa-left-long"></i> Go Back
+</a>
+
+<div class="card mt-3" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Header</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">@Model.Title</h6>
+    <p class="card-text">@Model.Description</p>
+    <p class="card-text text-secondary">
+      Created at @Model.CreatedTime by <span class ="fw-bold">@Model.User.Username</span>
+    </p>
+  </div>
+</div>

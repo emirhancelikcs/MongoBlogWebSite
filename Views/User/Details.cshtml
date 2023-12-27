@@ -1,0 +1,27 @@
+﻿@model UserModel
+
+<div class="d-flex justify-content-end">
+
+	<a href="/User/MyBlogs" class="btn btn-warning">@Model.Username</a>
+</div>
+
+<form method="post" style="margin-top: 10px;">
+	<div class="row">
+		<label asp-for="Name"></label>
+		<input type="text" class="form-control mb-3" readonly placeholder="@Model.Name" asp-for="Name" value="@Model.Name">
+	</div>
+	<div class="row">
+		<label asp-for="LastName"></label>
+		<input type="text" class="form-control mb-3" readonly placeholder="@Model.LastName" asp-for="LastName" value="@Model.LastName">
+	</div>
+	<div class="row">
+		<label asp-for="Username"></label>
+		<input type="text" class="form-control mb-3" readonly placeholder="@Model.Username" asp-for="Username" value="@Model.Username">
+	</div>
+	<div class="row">
+		<label asp-for="Email"></label>
+		<input type="email" class="form-control mb-3"  readonly placeholder="@Model.Email" asp-for="Email" value="@Model.Email">
+	</div>
+
+	<button type="submit" class="btn btn-primary mt-3">Update</button>
+</form>
